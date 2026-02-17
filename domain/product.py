@@ -6,10 +6,6 @@ class Product:
         self._id = product_id
         self._name = name
         self._price = price
-
-    @property
-    def id(self) -> str:
-        return self._id
         
     @property
     def price(self):
