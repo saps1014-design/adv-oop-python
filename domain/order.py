@@ -1,0 +1,18 @@
+from customer import Customer
+from product import Product
+from orderline import OrderLine
+from money import Money
+
+class Order:
+    def __init__(self, order_id: str, customer: Customer):
+        self._id = order_id
+        self._customer = customer
+        
+        self._lines = []
+        
+        
+    def  add_product(self, product: Product, quantity: int):
+        self._lines.append(OrderLine(product, quantity))
+        
+    def total(self) -> Money:
+        return sum(line.line_total() for line in self._lines)
