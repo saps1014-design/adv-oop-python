@@ -1,0 +1,48 @@
+# Homework Assignment Week 1
+
+1. Add ability to remove product from order
+2. Add quantity validation (must be > 0)
+3. Add order string representation. Hint: you will need to implement ```__str__``` method
+
+4. Ensure no class exceeds 100 lines
+5. Add type hints everywhere
+6. Prepare short written response: What is the difference between an entity and a value object? Why is Money better than float?
+
+
+Answer 6: 
+What is the difference between an entity and a value object?
+An entity is an object that has a unique identity that distinguishes it from other objects,
+even if its attributes change.
+
+ex: 
+Coustomer (id ="x1", name = "Sergio")
+If "Sergio" change his name 
+Coustomer (id ="x1", name = "Sergio Alberto P")
+They are still the same person because the ID doesn't change.
+
+A value object does not have identity; it is defined only by its values.
+Two value objects with the same values are considered equal. Money is a value object.
+
+ex:
+Money(45, "CAD")
+If you create another:
+Money(45, "CAD")
+They are equivalent because the value is the same.
+
+What matters in a value object is how much it is.
+
+Why is Money better than float?
+Money is better than float because float can produce rounding errors due to binary precision.
+Money uses Decimal, which provides more accurate calculations and also enforces rules such as currency consistency.
+
+ex: 
+Using float:
+0.1 + 0.2 = 0.30000000000000004
+Because float saves numbers in binary.
+
+but using Decimal: 
+Decimal("0.1") + Decimal("0.2") = 0.3
+Exactly, what you need in terms of money.
+
+
+
